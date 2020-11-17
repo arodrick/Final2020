@@ -116,11 +116,28 @@ fisher.test(table1)
 dataD<-filter(FinalData,DrugUser=="yes")
 ```
 
-## graphical redults for drug users
+## Graphical Results for Drug Users
 
-## numerical results for drug users
+```{r}
+barchartGC(~infected + treatment,data=dataD)
+barchartGC(~infected + treatment,data=dataD, type="percent")
+```
 
-## inferential results for drug users 
+## Numerical Results for Drug Users
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=dataD)
+rowPerc(table1)
+colPerc(table1)
+```
+
+## Inferential Results for Drug Users
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
