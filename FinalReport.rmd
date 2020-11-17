@@ -32,14 +32,14 @@ barchartGC(~infected + treatment,data=dataF, type="percent")
 
 ```
 
-## Numerical Results
+## Numerical Results for Females
 
 ```{r}
 table1 <- xtabs(~infected + treatment, data=dataF)
 rowPerc(table1)
 colPerc(table1)
 ```
-## Inferential Results
+## Inferential Results for Females
 
 ```{r}
 chisq.test(table1)
@@ -49,9 +49,61 @@ fisher.test(table1)
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
 
-# Resuts 
 
 
+# Results for Guys
+
+```{r}
+dataM<-filter(FinalData,sex=="guy")
+```
+
+
+## Graphical Results for Guys
+
+```{r}
+barchartGC(~infected + treatment,data=dataM)
+barchartGC(~infected + treatment,data=dataM, type="percent")
+```
+
+## Numerical Results for Guys 
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=dataM)
+rowPerc(table1)
+colPerc(table1)
+```
+
+## Inferential Results for Guys 
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+# results for LGBTQ
+
+```{r}
+dataQ<-filter(FinalData,LGBTQ=="gay")
+```
+
+## graphical results for LGBTQ
+
+## Numerical results for LGBTQ
+
+## Inferential results for LGBTQ
+
+## results for Drug Users
+
+```{r}
+dataD<-filter(FinalData,DrugUser=="yes")
+```
+
+## graphical redults for drug users
+
+## numerical results for drug users
+
+## inferential results for drug users 
 
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
