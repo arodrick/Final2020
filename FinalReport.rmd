@@ -81,19 +81,36 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
-# results for LGBTQ
+# Results for LGBTQ
 
 ```{r}
 dataQ<-filter(FinalData,LGBTQ=="gay")
 ```
 
-## graphical results for LGBTQ
+## Graphical Results for LGBTQ
 
-## Numerical results for LGBTQ
+```{r}
+barchartGC(~infected + treatment,data=dataQ)
+barchartGC(~infected + treatment,data=dataQ, type="percent")
+```
 
-## Inferential results for LGBTQ
+## Numerical Results for LGBTQ
 
-## results for Drug Users
+```{r}
+table1 <- xtabs(~infected + treatment, data=dataQ)
+rowPerc(table1)
+colPerc(table1)
+```
+
+## Inferential Results for LGBTQ
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+## Results for Drug Users
 
 ```{r}
 dataD<-filter(FinalData,DrugUser=="yes")
