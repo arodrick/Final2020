@@ -1,5 +1,5 @@
 ---
-title: "Covid91 vaccine study Final2020"
+title: "Covid-19 Vaccine Study Final2020"
 author: "Amee Rodrick"
 date: "October 26,2020"
 output: html_document
@@ -43,6 +43,10 @@ table1 <- xtabs(~infected + treatment, data=dataF)
 rowPerc(table1)
 colPerc(table1)
 ```
+
+The percentage of females that got infected on the drug was 33% aqnd the placebo was 67%.
+
+
 ## Inferential Results for Females
 
 ```{r}
@@ -50,6 +54,8 @@ chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ```
+
+The odds of getting covid for a female are about 5.1.
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
 
@@ -86,6 +92,10 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
+The odds of a guy getting Covid if he takes the drug are 1.5 1: greater than if he takes the placebo 
+
+It appears that 58% of the people that got infected took the drug and 42% had taken the placebo.
+
 # Results for LGBTQ
 
 ```{r}
@@ -99,7 +109,7 @@ barchartGC(~infected + treatment,data=dataQ)
 barchartGC(~infected + treatment,data=dataQ, type="percent")
 ```
 
-For the graph, the drug is more effective for the LGBTQ. Fewer people have gotten sick when taking the drug than when taking the placebo. Approximately 64% of the people took the drug got sick, wheres as the 36% of the people who took the placebo got sick. 
+For the graph, it appears that this drug is not working for the LGBTQ community. More than twice the number of people who took the drug than the placebo got sick with Covid.
 
 
 
@@ -111,6 +121,9 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
+In the LGBTQ community the percentage of people who got infected on the drug was neqarly 71% whereas on the placebo was only 29%.
+
+
 ## Inferential Results for LGBTQ
 
 ```{r}
@@ -118,6 +131,8 @@ chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ```
+
+The odds for getting Covid in the LBGTQ are chances getting infected if taking the drug are 2.5:1.
 
 ## Results for Drug Users
 
@@ -143,6 +158,9 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
+The percentage of drug users that got infected while taking was 33% and while taking the placebo was 67%.
+
+
 ## Inferential Results for Drug Users
 
 ```{r}
@@ -150,6 +168,8 @@ chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ```
+
+The odds of getting Covid if you are a drug user is about .55:1.
 
 
 
@@ -162,7 +182,5 @@ fisher.test(table1)
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
-
-
-
+If are a female the drug is useful in protecting you from Covid-19, The vaccine appears to have a positive effect on the males. Among the males who took the vaccine more of them contracted the Covid-19  it appears to not keep them from contracting the virus..Among the LBGTQ community it appears the vaccine is not effective in preventing them from contracting the virus. Among the drug users 30% who had the virus took the vaccine and 65% who had the virus did not take the vaccine it appears that there is a   difference between those who took the vaccine and those who did not.
 
