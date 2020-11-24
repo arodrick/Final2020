@@ -1,5 +1,5 @@
 ---
-title: "Covid-19 Vaccine Study Final2020"
+title: "Covid-91 Vaccine Study Final2020"
 author: "Amee Rodrick"
 date: "October 26,2020"
 output: html_document
@@ -83,6 +83,8 @@ For this graph, the drug is not effective for the guys, It appears to not be hel
 table1 <- xtabs(~infected + treatment, data=dataM)
 rowPerc(table1)
 colPerc(table1)
+```
+
 
 ## Inferential Results for Males
 
